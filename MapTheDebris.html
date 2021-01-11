@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            function orbitalPeriod(arr)
+            {
+                var GM = 398600.4418;
+                //let rGM = Math.round(GM);
+                var earthRadius = 6367.4447;
+                //let rERad = Math.round(earthRadius);
+                for(let i = 0; i < arr.length; i++)
+                {
+                    let avgA = arr[i]["avgAlt"];
+                    let T = Math.round((2*Math.PI)*(Math.sqrt(Math.pow(earthRadius + avgA, 3)/GM)));
+                    arr[i]["orbitalPeriod"] = T;
+                    delete arr[i]["avgAlt"];
+                }                
+                return arr;
+            }
+            //console.log(orbitalPeriod(36000));
+            console.log(orbitalPeriod([{name: "sputnik", avgAlt : 35873.5553}]));
+            console.log(orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}]));
+        </script>
+    </body>
+</html>
