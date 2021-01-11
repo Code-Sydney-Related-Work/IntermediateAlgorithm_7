@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+        class Person { constructor (firstAndLast) // constructor
+           //var Person = function(firstAndLast){
+               //let fullName = firstAndLast;
+            {   //Complete the method below and implement the others similarly
+                this._fullName = firstAndLast;                
+            }
+
+            set setFirstName(first) //first
+            {   
+                this._fullName = first + " " + this._fullName.split(" ")[1]; 
+            }
+
+            get getFirstName()
+            {   
+                return this._fullName.split(" ")[0];
+            }
+
+            set setLastName(last)
+            {   
+                this._fullName = this._fullName.split(" ")[0] + " " + last; 
+            }
+
+            get getLastName()
+            {
+                return this._fullName.split(" ")[1];
+            }
+
+            set setFullName(firstAndLast)
+            {
+                this._fullName = firstAndLast;
+            }
+
+            get getFullName()
+            {   
+                return this._fullName;
+            };
+        }
+                const bob = new Person('Bob Ross');
+                console.log(bob.getFullName);
+                console.log(Object.keys(bob).length);
+                bob.setFirstName="Haskell";
+                console.log(bob.getFullName);
+                bob.setLastName="Curry";
+                console.log(bob.getFullName);
+                bob.setFullName="Haskell Curry";
+                console.log(bob.getFirstName);
+                console.log(Object.keys(bob).length);
+        </script>
+    </body>
+</html>
