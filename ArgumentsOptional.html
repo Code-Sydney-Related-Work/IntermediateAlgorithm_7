@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            function addTogether()
+            {
+                var firstArg = arguments[0];
+                var secondArg = arguments[1];
+                var limit = arguments.length;
+                var result = 0;
+                //if(checkForNum(secondArg)== undefined){return undefined;}
+               // console.log(typeof secondArg);
+
+                function checkForNum(){
+                    if(typeof num !== "number"){
+                        return undefined;
+                    }
+                    else{return "number"}
+                }
+                //console.log("The arguments and length are " + firstArg + ", " + secondArg + ", " + limit);
+
+                if(limit >= 2)
+                {   
+                   // let var1 = checkForNum(firstArg);
+                    //let var2 = checkForNum(secondArg);                    
+               
+                    if(typeof firstArg == "number" && typeof secondArg == "number")
+                    {
+                        result = firstArg + secondArg;
+                        return result;
+                        //console.log("The two number addition was " + result);
+                        
+                    }
+                    else
+                    {
+                        //console.log("Tack 1");
+                        return undefined;
+                    }
+                }
+                else
+                {   var c = arguments[0];
+
+                        if (checkNum(c)) {
+                        
+                        return function(arg2) {
+                            
+                            if (c === undefined || checkForNum(arg2) === undefined) {
+                            return undefined;
+                            } 
+                            else 
+                            {                            
+                            return c + arg2;
+                            }
+                        }; 
+                    }
+                }
+                } 
+                /*function addTogether() 
+                {   
+                    let firstnum = arguments[0];
+                    let secondnum = arguments[1];
+                    if (typeof firstnum !== "number") 
+                    {
+                        return undefined;
+                    }
+                   
+                    function sumofnum (secondnum) 
+                    {
+                        if(typeof secondnum === "number"){return firstnum + secondnum;}
+                        else{return undefined;}
+                    }
+                     //const sumofnum = secondnum => typeof secondnum === "number" ? firstnum + secondnum : undefined;
+
+                    return typeof secondnum === "undefined" ? secondnum => sumofnum(secondnum) : sumofnum(secondnum);
+                }  */               
+                
+            console.log(addTogether(2, 3));
+        </script>
+    </body>
+</html>
