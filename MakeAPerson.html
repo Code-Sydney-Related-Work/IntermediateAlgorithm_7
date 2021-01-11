@@ -18,52 +18,44 @@
         <![endif]-->
         
         <script>
-        class Person { constructor (firstAndLast) // constructor
-           //var Person = function(firstAndLast){
-               //let fullName = firstAndLast;
-            {   //Complete the method below and implement the others similarly
-                this._fullName = firstAndLast;                
-            }
+         let Person = function(firstAndLast) {
+            let fullName = firstAndLast;
 
-            set setFirstName(first) //first
-            {   
-                this._fullName = first + " " + this._fullName.split(" ")[1]; 
-            }
-
-            get getFirstName()
-            {   
-                return this._fullName.split(" ")[0];
-            }
-
-            set setLastName(last)
-            {   
-                this._fullName = this._fullName.split(" ")[0] + " " + last; 
-            }
-
-            get getLastName()
-            {
-                return this._fullName.split(" ")[1];
-            }
-
-            set setFullName(firstAndLast)
-            {
-                this._fullName = firstAndLast;
-            }
-
-            get getFullName()
-            {   
-                return this._fullName;
+            this.getFirstName = function() {
+                return fullName.split(" ")[0];
             };
-        }
-                const bob = new Person('Bob Ross');
-                console.log(bob.getFullName);
+
+            this.getLastName = function() {
+                return fullName.split(" ")[1];
+            };
+
+            this.getFullName = function() {
+                return fullName;
+            };
+
+            this.setFirstName = function(name) {
+                fullName = name + " " + fullName.split(" ")[1];
+            };
+
+            this.setLastName = function(name) {
+                fullName = fullName.split(" ")[0] + " " + name;
+            };
+
+            this.setFullName = function(name) {
+                fullName = name;
+            };
+            };
+
+            let bob = new Person("Bob Ross");
+            console.log(bob.getFullName());
+            console.log(bob.getFullName());
                 console.log(Object.keys(bob).length);
-                bob.setFirstName="Haskell";
-                console.log(bob.getFullName);
-                bob.setLastName="Curry";
-                console.log(bob.getFullName);
-                bob.setFullName="Haskell Curry";
-                console.log(bob.getFirstName);
+                bob.setFirstName("Haskell");
+                console.log(bob.getFullName());
+                bob.setLastName("Curry");
+                console.log(bob.getFullName());
+                bob.setFullName("Haskell Curry");
+                console.log(bob.getFirstName());
                 console.log(Object.keys(bob).length);
         </script>
     </body>
